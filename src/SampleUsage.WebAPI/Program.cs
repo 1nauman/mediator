@@ -1,11 +1,10 @@
-using System.Reflection;
 using Mediator;
 using SampleUsage.WebAPI.Application.Weather.Queries;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-builder.Services.AddMediator(Assembly.GetExecutingAssembly());
+builder.Services.AddMediator();
 
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
 builder.Services.AddOpenApi();

@@ -6,6 +6,21 @@ namespace Microsoft.Extensions.DependencyInjection;
 
 public static class ServiceCollectionExtensions
 {
+    /// <summary>
+    /// Adds Mediator services to the specified IServiceCollection.
+    /// </summary>
+    /// <param name="services"></param>
+    /// <returns></returns>
+    public static IServiceCollection AddMediator(this IServiceCollection services) =>
+        AddMediator(services, Assembly.GetCallingAssembly());
+
+    /// <summary>
+    /// Adds Mediator services to the specified IServiceCollection.
+    /// Scans the specified assembly for request handlers.
+    /// </summary>
+    /// <param name="services"></param>
+    /// <param name="assembly"></param>
+    /// <returns></returns>
     public static IServiceCollection AddMediator(this IServiceCollection services, Assembly assembly)
     {
         services.AddScoped<IMediator, Mediator.Mediator>();
