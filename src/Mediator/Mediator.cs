@@ -1,3 +1,5 @@
+using Mediator.Abstractions;
+
 namespace Mediator;
 
 internal class Mediator : IMediator

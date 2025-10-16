@@ -11,6 +11,7 @@
     </ItemGroup>
 
     <ItemGroup>
+      <ProjectReference Include="..\Mediator.Extensions.FluentValidation\Mediator.Extensions.FluentValidation.csproj" />
       <ProjectReference Include="..\Mediator\Mediator.csproj" />
     </ItemGroup>
 

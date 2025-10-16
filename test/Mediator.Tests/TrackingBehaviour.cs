@@ -1,3 +1,5 @@
+using Mediator.Abstractions;
+
 namespace Mediator.Tests;
 
 internal class TrackingBehaviour<TRequest, TResponse> : IPipelineBehaviour<TRequest, TResponse>

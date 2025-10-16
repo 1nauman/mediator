@@ -1,5 +1,5 @@
 using System.Reflection;
-using Mediator;
+using Mediator.Abstractions;
 
 // ReSharper disable once CheckNamespace
 namespace Microsoft.Extensions.DependencyInjection;

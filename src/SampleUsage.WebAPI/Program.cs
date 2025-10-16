@@ -1,10 +1,16 @@
-using Mediator;
+using Mediator.Abstractions;
+using Microsoft.AspNetCore.Mvc;
 using SampleUsage.WebAPI.Application.Weather.Queries;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+
+// Add Mediator
 builder.Services.AddMediator();
+
+// Add FluentValidation from Mediator.Extensions.FluentValidation
+builder.Services.AddFluentValidation();
 
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
 builder.Services.AddOpenApi();
@@ -17,9 +23,9 @@ if (app.Environment.IsDevelopment())
     app.MapOpenApi();
 }
 
-app.MapGet("/weatherforecast", async (IMediator mediator) =>
+app.MapGet("/weatherforecast", async ([FromQuery] string location, IMediator mediator) =>
     {
-        var query = new GetWeatherForecastsQuery();
+        var query = new GetWeatherForecastsQuery { Location = location };
         var forecasts = await mediator.SendAsync(query);
 
         var translatedForecasts = forecasts

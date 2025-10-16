@@ -1,4 +1,4 @@
-namespace Mediator;
+namespace Mediator.Abstractions;
 
 /// <summary>
 /// Represents a request that can be sent through the mediator.

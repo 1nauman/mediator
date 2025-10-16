@@ -1,4 +1,4 @@
-namespace Mediator;
+namespace Mediator.Abstractions;
 
 /// <summary>
 /// Represents a mediator that facilitates communication between different components in a system.

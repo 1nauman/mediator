@@ -1,4 +1,4 @@
-using Mediator;
+using Mediator.Abstractions;
 
 namespace SampleUsage.WebAPI.Application.Weather.Queries;
 

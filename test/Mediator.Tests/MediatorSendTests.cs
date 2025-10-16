@@ -1,4 +1,5 @@
-﻿using Microsoft.Extensions.DependencyInjection;
+﻿using Mediator.Abstractions;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace Mediator.Tests;
 

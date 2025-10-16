@@ -1,4 +1,4 @@
-namespace Mediator;
+namespace Mediator.Abstractions;
 
 /// <summary>
 /// Represents a handler for processing requests.

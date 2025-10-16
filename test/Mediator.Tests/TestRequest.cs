@@ -1,3 +1,5 @@
+using Mediator.Abstractions;
+
 namespace Mediator.Tests;
 
 internal class TestRequest : IRequest<string>
