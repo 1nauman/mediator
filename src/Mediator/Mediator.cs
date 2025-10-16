@@ -10,7 +10,7 @@ internal class Mediator : IMediator
         _serviceProvider = serviceProvider;
     }
 
-    public Task<TResponse> Send<TResponse>(IRequest<TResponse> request, CancellationToken cancellationToken = default)
+    public Task<TResponse> SendAsync<TResponse>(IRequest<TResponse> request, CancellationToken cancellationToken = default)
     {
         ArgumentNullException.ThrowIfNull(request);
 
@@ -19,6 +19,6 @@ internal class Mediator : IMediator
             (RequestHandlerWrapper<TResponse>)Activator.CreateInstance(
                 typeof(RequestHandlerWrapperImpl<,>).MakeGenericType(requestType, typeof(TResponse)))!;
 
-        return handlerWrapper.Handle(request, _serviceProvider, cancellationToken);
+        return handlerWrapper.HandleAsync(request, _serviceProvider, cancellationToken);
     }
 }

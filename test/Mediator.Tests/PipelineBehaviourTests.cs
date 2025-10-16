@@ -25,7 +25,7 @@ public class PipelineBehaviourTests
         var request = new TestRequest { Message = "Pipeline Test" };
 
         // Act
-        await mediator.Send(request);
+        await mediator.SendAsync(request);
 
         // Assert
         // Expected order: Behavior2 starts, then Behavior1 starts, then the handler runs, then Behavior1 finishes, then Behavior2 finishes.

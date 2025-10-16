@@ -2,7 +2,7 @@ namespace Mediator.Tests;
 
 internal class TestRequestHandler : IRequestHandler<TestRequest, string>
 {
-    public Task<string> Handle(TestRequest request, CancellationToken cancellationToken)
+    public Task<string> HandleAsync(TestRequest request, CancellationToken cancellationToken)
     {
         return Task.FromResult(request.Message);
     }

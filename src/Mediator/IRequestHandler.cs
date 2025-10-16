@@ -13,5 +13,5 @@ public interface IRequestHandler<in TRequest, TResponse> where TRequest : IReque
     /// <param name="request"></param>
     /// <param name="cancellationToken"></param>
     /// <returns></returns>
-    Task<TResponse> Handle(TRequest request, CancellationToken cancellationToken = default);
+    Task<TResponse> HandleAsync(TRequest request, CancellationToken cancellationToken = default);
 }

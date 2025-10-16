@@ -15,7 +15,7 @@ public class MediatorSendTests
         var request = new TestRequest { Message = "Hello, Mediator!" };
 
         // Act
-        var result = await sut.Send(request);
+        var result = await sut.SendAsync(request);
 
         // Assert
         Assert.Equal("Hello, Mediator!", result);
@@ -32,6 +32,6 @@ public class MediatorSendTests
         var request = new TestRequest { Message = "This will fail" };
 
         // Act
-        await Assert.ThrowsAsync<InvalidOperationException>(async () => await sut.Send(request));
+        await Assert.ThrowsAsync<InvalidOperationException>(async () => await sut.SendAsync(request));
     }
 }
